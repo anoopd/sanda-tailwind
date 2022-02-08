@@ -39,6 +39,7 @@
   },
   "scripts": {
     "watch": "npx tailwindcss -i ./src/css/main.css -o ./dist/tailwind.css --watch",
+    "sync": ./node_modules/.bin/browser-sync start   -p "http://localhost/wordpress"  -f '**/*.php, **/*.css',
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
