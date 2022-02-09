@@ -21,6 +21,7 @@
     "browser-sync": "^2.27.7",
     "dir-archiver": "^1.1.1",
     "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
     "rtlcss": "^3.5.0",
     "tailwindcss": "^3.0.19"
   },
@@ -39,7 +40,8 @@
   },
   "scripts": {
     "watch": "npx tailwindcss -i ./src/css/main.css -o ./dist/tailwind.css --watch",
-    "sync": ./node_modules/.bin/browser-sync start   -p "http://localhost/wordpress"  -f '**/*.php, **/*.css',
+    "sync": "./node_modules/.bin/browser-sync start   -p 'http://localhost/wordpress'  -f '**/*.php, **/*.css'",
+    "watch:sync": "run-p watch sync",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
