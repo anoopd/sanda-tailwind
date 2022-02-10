@@ -176,9 +176,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function sanda_tailwind() {
+/**
+* Enqueuing the Tailwind CSS
+*/
 
+function sanda_tailwind() {
 	wp_enqueue_style('tailwind', get_template_directory_uri().'/dist/tailwind.css',);
 }
-
 add_action('wp_enqueue_scripts','sanda_tailwind');
+
+/**
+* Load Walker Class
+*/
+require get_template_directory().'/inc/Sanda_Walker.php';

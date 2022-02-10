@@ -38,7 +38,8 @@
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
-					'menu_class' => 'flex gap-x-9'
+					'menu_class' => 'flex gap-x-9',
+          'walker' => new Sanda_Walker()
 				)
 			);
 			?>
